@@ -10,7 +10,7 @@ module Google
     }
 
     def initialize(config, scopes, logger)
-      @config ||= config
+      @config ||= config.merge(type: 'service_account')
       @g_scopes ||= scopes.map { |scope| G_SCOPE[scope] }
       @logger ||= logger
 
